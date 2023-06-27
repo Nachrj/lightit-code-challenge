@@ -11,26 +11,36 @@ export const metadata = {
 }
 
 export default function RootLayout({ children }) {
+  const items = [
+    {
+      title: 'Aberturas',
+      icon: 'Aberturas'
+    },
+    {
+      title: 'Equipamiento',
+      icon: 'Equipamiento'
+    },
+    {
+      title: 'Terminaciones',
+      icon: 'Terminaciones'
+    }
+  ]
+
   return (
     <html lang="en">
       <body className={inter.className}>
         <Header />
         <div className="flex flex-col md:flex-row flex-1">
-          <aside className="bg-white w-full md:w-60">
+          <aside className="bg-white w-full md:w-24">
             <nav>
               <ul>
-                <SideBarItem 
-                  title="Aberturas"
-                  icon="Aberturas"
-                />
-                <SideBarItem 
-                  title="Equipamiento"
-                  icon="Equipamiento"
-                />
-                <SideBarItem 
-                  title="Terminaciones"
-                  icon="Terminaciones"
-                />
+                {items.map((item, index) => (
+                  <SideBarItem
+                    key={index}
+                    title={item.title}
+                    icon={item.icon}
+                  />
+                ))}
               </ul>
             </nav>
           </aside>
