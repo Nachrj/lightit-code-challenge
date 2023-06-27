@@ -48,6 +48,7 @@ export default function SideBarTab({ id, title, selectedItem }) {
                                         height={15}
                                         priority
                                         className="rotate-180"
+                                        placeholder="empty"
                                     />
                                 </button>
                             ))}
