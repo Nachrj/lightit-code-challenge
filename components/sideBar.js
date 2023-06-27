@@ -28,17 +28,17 @@ export default function SideBar({ children }) {
         <div className="flex flex-col md:flex-row flex-1">
             <aside className="bg-white w-full md:w-24">
                 <nav>
-                <ul>
-                    {items.map((item) => (
-                    <SideBarItem
-                        key={item.id}
-                        id={item.id}
-                        title={item.title}
-                        icon={item.icon}
-                        setSelectedItem={setSelectedItem}
-                    />
-                    ))}
-                </ul>
+                    <ul>
+                        {items.map((item) => (
+                            <SideBarItem
+                                key={item.id}
+                                id={item.id}
+                                title={item.title}
+                                icon={item.icon}
+                                setSelectedItem={setSelectedItem}
+                            />
+                        ))}
+                    </ul>
                 </nav>
             </aside>
             {items.map((item) => (
