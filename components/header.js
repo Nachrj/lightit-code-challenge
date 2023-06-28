@@ -13,7 +13,7 @@ export default function Header() {
     >
       <div>
         <Image
-          src="/light-it-logo.png"
+          src="/light-it-logo-white.png"
           alt="Light it logo"
           width={100}
           height={24}
