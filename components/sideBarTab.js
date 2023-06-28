@@ -1,13 +1,10 @@
 'use client';
 import { useEffect, useState } from "react";
 import Image from 'next/image'
+import Breadcrumb from "./breadcrumb";
+import { DEFAULT_SELECTED_PRODUCT } from '../utils/constants'
 
-const DEFAULT_SELECTED_PRODUCT = {
-    name: '',
-    items: []
-}
-
-export default function SideBarTab({ id, title, selectedItem }) {
+export default function SideBarTab({ id, title, selectedItem, isOpen }) {
     const [data, setData] = useState([])
     const [selectedProduct, setSelectedProduct] = useState(DEFAULT_SELECTED_PRODUCT)
 
@@ -32,7 +29,7 @@ export default function SideBarTab({ id, title, selectedItem }) {
     }
 
     return (
-        selectedItem === id && (
+        (selectedItem === id && isOpen) && (
             <div className={`bg-neutral-200 w-1/5 rounded-t-md shadow-md transition-transform duration-300 transform`}>
                 {selectedProduct.items.length === 0 ? (
                     <div className="p-4">
@@ -56,6 +53,7 @@ export default function SideBarTab({ id, title, selectedItem }) {
                     </div>
                 ) : (
                     <div className="p-4">
+                        <Breadcrumb title={title} setSelectedProduct={setSelectedProduct} />
                         <span className=".bg-black text-lg font-semibold">{selectedProduct.name}</span>
                         <div className="mt-4 grid grid-cols-3 gap-4">
                             {selectedProduct.items.map((item, index) => (
