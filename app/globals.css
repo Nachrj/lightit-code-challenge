@@ -9,8 +9,6 @@
 
 body {
   overflow: hidden;
-  color: rgb(var(--foreground-rgb));
-  background-color: rgb(var(--background-rgb));
 }
 
 .min-h-screen {

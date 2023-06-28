@@ -33,7 +33,7 @@ export default function SideBarTab({ id, title, selectedItem }) {
 
     return (
         selectedItem === id && (
-            <div className={`bg-grey-100 w-1/5 rounded-t-md shadow-md transition-transform duration-300 transform`}>
+            <div className={`bg-neutral-200 w-1/5 rounded-t-md shadow-md transition-transform duration-300 transform`}>
                 {selectedProduct.items.length === 0 ? (
                     <div className="p-4">
                         <span className=".bg-black text-lg font-semibold">{title}</span>
