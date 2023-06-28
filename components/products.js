@@ -22,7 +22,7 @@ export default function Products({
               height={20}
               className="w-20 h-20 object-cover"
             />
-            <span className="mt-2">{item.name}</span>
+            <span className="mt-2 text-xs">{item.name}</span>
           </div>
         ))}
       </div>

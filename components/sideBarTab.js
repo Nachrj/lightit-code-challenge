@@ -40,7 +40,7 @@ export default function SideBarTab({ id, title, selectedItem, isOpen }) {
     selectedItem === id &&
     isOpen && (
       <div
-        className={`bg-neutral-200 w-1/5 rounded-t-md shadow-md transition-transform duration-300 transform`}
+        className={`bg-neutral-200 w-1/4 rounded-t-md shadow-md transition-transform duration-300 transform`}
       >
         {selectedProduct.items.length === 0 ? (
           // don't really know if categories and
