@@ -37,21 +37,19 @@ export default function SideBar({ children }) {
 
     return (
         <div className="flex flex-col md:flex-row flex-1">
-            <aside className="bg-white w-full md:w-24">
-                <nav>
-                    <ul>
-                        {ITEMS.map((item) => (
-                            <SideBarItem
-                                key={item.id}
-                                id={item.id}
-                                title={item.title}
-                                icon={item.icon}
-                                setSelectedItem={handleItemSelection}
-                            />
-                        ))}
-                    </ul>
-                </nav>
-            </aside>
+            <nav className='flex h-screen justify-center items-center'>
+                <ul>
+                    {ITEMS.map((item) => (
+                        <SideBarItem
+                            key={item.id}
+                            id={item.id}
+                            title={item.title}
+                            icon={item.icon}
+                            setSelectedItem={handleItemSelection}
+                        />
+                    ))}
+                </ul>
+            </nav>
             {ITEMS.map((item) => (
                 <SideBarTab
                     key={item.id}
