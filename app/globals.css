@@ -14,5 +14,5 @@ body {
 }
 
 .min-h-screen {
-  min-height: 91vh;
+  min-height: calc(100vh - 60px);
 }
