@@ -1,7 +1,7 @@
-import SetAndDelete from '@/components/SetAndDelete'
-import ArrowsButtons from '@/components/arrowsButtons'
-import ZoomButtons from '@/components/zoomButtons'
-import Image from 'next/image'
+import SetAndDelete from "@/components/SetAndDelete";
+import ArrowsButtons from "@/components/arrowsButtons";
+import ZoomButtons from "@/components/zoomButtons";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -12,5 +12,5 @@ export default function Home() {
         <ArrowsButtons />
       </div>
     </main>
-  )
+  );
 }
