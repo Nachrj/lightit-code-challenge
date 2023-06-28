@@ -39,9 +39,7 @@ export default function SideBarTab({ id, title, selectedItem, isOpen }) {
   return (
     selectedItem === id &&
     isOpen && (
-      <div
-        className={`bg-neutral-200 w-1/4 rounded-t-md shadow-md transition-transform duration-300 transform`}
-      >
+      <div className="bg-neutral-200 w-1/4 rounded-t-md shadow-md">
         {selectedProduct.items.length === 0 ? (
           // don't really know if categories and
           // products is the best way to describe this items.
