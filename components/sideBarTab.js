@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import Image from 'next/image'
 import Breadcrumb from "./breadcrumb";
 import { DEFAULT_SELECTED_PRODUCT } from '../utils/constants'
+import Categories from "./categories";
+import Products from "./products";
 
 export default function SideBarTab({ id, title, selectedItem, isOpen }) {
     const [data, setData] = useState([])
@@ -14,6 +16,8 @@ export default function SideBarTab({ id, title, selectedItem, isOpen }) {
             .then((data) => setData(data))
     }, [title])
 
+    // I am not a fan of the useEffect with the selectedItem dependencie,
+    // but it is a way to solve this problem.
     useEffect(() => {
         if (selectedItem !== id) {
             setSelectedProduct(DEFAULT_SELECTED_PRODUCT)
@@ -32,44 +36,20 @@ export default function SideBarTab({ id, title, selectedItem, isOpen }) {
         (selectedItem === id && isOpen) && (
             <div className={`bg-neutral-200 w-1/5 rounded-t-md shadow-md transition-transform duration-300 transform`}>
                 {selectedProduct.items.length === 0 ? (
-                    <div className="p-4">
-                        <span className=".bg-black text-lg font-semibold">{title}</span>
-                        <div className="mt-4 grid grid-cols-1 gap-4">
-                            {data.map((item, index) => (
-                                <button key={index} onClick={() => handleButton(item)} className="flex justify-between rounded-xl bg-white px-4 py-3">
-                                    <span>{item.name}</span>
-                                    <Image
-                                        src="/images/activo.png"
-                                        alt="right arrow"
-                                        width={15}
-                                        height={15}
-                                        priority
-                                        className="rotate-180"
-                                        placeholder="empty"
-                                    />
-                                </button>
-                            ))}
-                        </div>
-                    </div>
+                    // don't really know if categories and 
+                    // products is the best way to describe this items.
+                    <Categories 
+                        title={title}
+                        data={data}
+                        handleButton={handleButton}
+                    />
                 ) : (
-                    <div className="p-4">
-                        <Breadcrumb title={title} setSelectedProduct={setSelectedProduct} />
-                        <span className=".bg-black text-lg font-semibold">{selectedProduct.name}</span>
-                        <div className="mt-4 grid grid-cols-3 gap-4">
-                            {selectedProduct.items.map((item, index) => (
-                                <div key={index} className="flex flex-col items-center">
-                                    <Image 
-                                        src={item.img} 
-                                        alt={item.name}
-                                        width={20}
-                                        height={20}
-                                        className="w-20 h-20 object-cover"
-                                    />
-                                    <span className="mt-2">{item.name}</span>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
+                    <Products 
+                        title={title}
+                        selectedProduct={selectedProduct}
+                        setSelectedProduct={setSelectedProduct}
+                    />
+
                 )}
             </div>
         )
