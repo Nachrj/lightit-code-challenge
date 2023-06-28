@@ -1,3 +1,4 @@
+import SetAndDelete from '@/components/SetAndDelete'
 import ArrowsButtons from '@/components/arrowsButtons'
 import ZoomButtons from '@/components/zoomButtons'
 import Image from 'next/image'
@@ -5,10 +6,7 @@ import Image from 'next/image'
 export default function Home() {
   return (
     <main className="min-h-screen flex flex-col bg-neutral-400">
-      <div className="flex justify-end m-6">
-        <button className="w-24 rounded-xl bg-white px-4 py-3 mr-4">Fijar</button>
-        <button className="w-24 rounded-xl bg-white px-4 py-3">Borrar</button>
-      </div>
+      <SetAndDelete />
       <div className="flex-grow flex justify-end items-end mb-4">
         <ZoomButtons />
         <ArrowsButtons />
