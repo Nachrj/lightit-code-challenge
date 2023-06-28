@@ -10,8 +10,8 @@ export default function Home() {
         <button className="w-24 rounded-xl bg-white px-4 py-3">Borrar</button>
       </div>
       <div className="flex-grow flex justify-end items-end">
-        <ZoomButtons />
-        <ArrowsButtons />
+      <ZoomButtons />
+      <ArrowsButtons />
       </div>
     </main>
   )
